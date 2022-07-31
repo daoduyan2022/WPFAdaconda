@@ -11,7 +11,7 @@ namespace Adaconda.Utils
     {
         public string[] G1(string[] lineCmd)
         {
-            int numOfParam = 5;
+            int numOfParam = 9;
             string[] result = new string[numOfParam];
             var llineCmd = lineCmd.ToList();
             for (int i = 0; i < llineCmd.Count; i++)
