@@ -1,0 +1,162 @@
+﻿<Window x:Class="Adaconda.View.HardWareConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Adaconda.View"
+        mc:Ignorable="d"
+        Title="HardWareConfig" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel>
+                <Menu x:Name="MenuStrip" FontSize="12" DockPanel.Dock ="Top" BorderBrush="LightSlateGray">
+                    <MenuItem Header="Menu" BorderBrush="LightGray">
+
+                        <MenuItem Header="Exit" Name="exitHardWareConfig" Click="exitHardWareConfig_Click">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resource\Icon\exit.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                    </MenuItem>
+                    <MenuItem Header="Help" BorderBrush="LightGray">
+                        <MenuItem Header="Manual"/>
+                        <MenuItem Header="Version"/>
+                    </MenuItem>
+                </Menu>
+                <ToolBar BorderBrush="LightSlateGray">
+                    <Button Name="btnIOConfig" Width="30" Height="30" ToolTip="Save, Ctrl+s">
+                        <Image Source="\Resource\Icon\save.png" Width="29" Height="30" Margin="-3,-3,0,0" ToolTip="Save"/>
+                    </Button>
+                </ToolBar>
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <GroupBox Header="PLCs" BorderBrush="Gray" BorderThickness="2" FontWeight="Bold">
+                        <StackPanel>
+                            <Label Content="PLC1:"/>
+                            <StackPanel HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="IP:"/>
+                                    <TextBox Name="tbxIpPlc1" Width="150" Margin="13,0,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="Port:"/>
+                                    <TextBox Name="tbxPortPlc1" Width="150"/>
+                                </StackPanel>
+                                <Button Name="btnCheckCntPLC1" Content="Check Connection PLC1" Width="150" Height="25" Margin="46,10,0,0" Background="{Binding _mainWindow._StatusConnectPLC1}"
+                                        Click="btnCheckCntPLC1_Click"/>
+                            </StackPanel>
+                            
+                            <Label Content="PLC2:"/>
+                            <StackPanel HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="IP:"/>
+                                    <TextBox Name="tbxIpPlc2" Width="150" Margin="13,0,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="Port:"/>
+                                    <TextBox Name="tbxPortPlc2" Width="150"/>
+                                </StackPanel>
+                                <Button Name="btnCheckCntPLC2" Content="Check Connection PLC2" Width="150" Height="25" Margin="46,10,0,0" 
+                                        Background="{Binding _mainWindow._StatusConnectPLC2}"
+                                        />
+
+                            </StackPanel>
+
+                            <Label Content="PLC3:"/>
+                            <StackPanel HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0" HorizontalAlignment="Left">
+                                    <Label Content="IP:"/>
+                                    <TextBox Name="tbxIpPlc3" Width="150" Margin="13,0,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="Port:"/>
+                                    <TextBox Name="tbxPortPlc3" Width="150"/>
+                                </StackPanel>
+                                <Button Name="btnCheckCntPLC3" Content="Check Connection PLC3" Width="150" Height="25" Margin="46,10,0,0" 
+                                        Background="{Binding _mainWindow._StatusConnectPLC3}"
+                                        />
+
+                            </StackPanel>
+
+                            <Label Content="PLC4:"/>
+                            <StackPanel HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="IP:"/>
+                                    <TextBox Name="tbxIpPlc4" Width="150" Margin="13,0,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <Label Content="Port:"/>
+                                    <TextBox Name="tbxPortPlc4" Width="150"/>
+                                </StackPanel>
+                                <Button Name="btnCheckCntPLC4" Content="Check Connection PLC4" Width="150" Height="25" Margin="46,10,0,0"
+                                        Background="{Binding _mainWindow._StatusConnectPLC4}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                    </GroupBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <GroupBox Header="Camera" BorderBrush="Gray" BorderThickness="2" FontWeight="Bold">
+                        <StackPanel>
+                            <Label Content="Camera 1:"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <Label Content="Pixel to mm:" FontWeight="Normal"/>
+                                <TextBox Name="txtPixelToMm1" Width="150" Margin="13,0,0,0"/>
+                            </StackPanel>
+
+                            <Label Content="Camera 2:"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <Label Content="Pixel to mm:" FontWeight="Normal"/>
+                                <TextBox Name="txtPixelToMm2" Width="150" Margin="13,0,0,0"/>
+                            </StackPanel>
+                            
+                            <Label Content="Camera 3:"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <Label Content="Pixel to mm:" FontWeight="Normal"/>
+                                <TextBox Name="txtPixelToMm3" Width="150" Margin="13,0,0,0"/>
+                            </StackPanel>
+                            
+                            <Label Content="Camera 4:"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <Label Content="Pixel to mm:" FontWeight="Normal"/>
+                                <TextBox Name="txtPixelToMm4" Width="150" Margin="13,0,0,0"/>
+                            </StackPanel>
+                            
+                            
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <GroupBox Header="Light" BorderBrush="Gray" BorderThickness="2" FontWeight="Bold">
+                        
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Window>

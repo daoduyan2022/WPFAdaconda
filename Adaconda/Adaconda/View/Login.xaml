@@ -1,0 +1,25 @@
+﻿<Window x:Class="Adaconda.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Adaconda.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Login" Height="200" Width="400">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Margin="30,30,0,0">
+            <StackPanel>
+                <Label Content="User name: "/>
+                <Label Content="Password: " Margin="0,5,0,0"/>
+
+            </StackPanel>
+            <StackPanel>
+                <TextBox Name="tbx_UserName" Width="200" Height="20" Margin="5,5,5,5" KeyDown="tbx_UserName_KeyDown"/>
+                <TextBox Name="tbx_Password" Width="200" Height="20" Margin="5,5,5,5" KeyDown="tbx_Password_KeyDown"/>
+                <Button Name="btn_Login" Content="Login" Width="60" Height="20" Margin="0,20,0,0" Click="btn_Login_Click"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>

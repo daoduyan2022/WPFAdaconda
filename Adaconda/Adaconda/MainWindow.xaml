@@ -1,0 +1,76 @@
+﻿<Window x:Class="Adaconda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Adaconda"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="My Application" Height="720" Width="1280">
+     
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row ="0" Margin ="0">
+            <StackPanel>
+                <Menu x:Name="MenuStrip" FontSize="12" DockPanel.Dock ="Top" BorderBrush="LightSlateGray">
+                    <MenuItem Header="Menu" BorderBrush="LightGray">
+                        <MenuItem Header="Model Management" Name="SetupModel" Click="SetupModel_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resource\Icon\model_icon.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Hardware Config" Name="HardwareConfig" Click="HardwareConfig_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resource\Icon\settings.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Exit" Name="Exit" Click="Exit_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resource\Icon\exit.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                    </MenuItem>
+                    <MenuItem Header="Help" BorderBrush="LightGray">
+                        <MenuItem Header="Manual"/>
+                        <MenuItem Header="Version"/>
+                    </MenuItem>
+                </Menu>
+                <ToolBar BorderBrush="LightSlateGray">
+                    <Button Name="btnIOConfig" Width="30" Height="30">
+                        <Image Source="Resource\Icon\settings.png" Width="29" Height="30" Margin="-3,-3,0,0"/>
+                    </Button>
+                    <Button Name="btnPlcMonitor" Width="30" Height="30" Margin="10,0,0,0">
+                        <Image Source="Resource\Icon\plc-removebg.png" Width="30" Height="30" Margin="-3,-3,0,0"/>
+                    </Button>
+                    <Button Name="btnModelManagement" Width="30" Height="30" Margin="10,0,0,0"
+                            Click="btnModelManagement_Click">
+                        <Image Source="Resource\Icon\model_icon.png"/>
+                    </Button>
+
+                    <Button Name="btnNotice" Width="30" Height="30" Margin="10,0,0,0">
+                        <Image Source="Resource\Icon\bell.png"/>
+                    </Button>
+
+                    <Label Content="Model:" FontSize="12" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbb_SelectModel" Width="200" Height="20" VerticalAlignment="Center" BorderBrush="LightGray"
+                              SelectionChanged="cbb_SelectModel_SelectionChanged"
+                              ItemsSource="{Binding _ListModelName}">
+
+
+                    </ComboBox>
+                    <Button Name="btnPlay" Cursor="Hand" Margin="10,5" VerticalAlignment="Center" Width="30" Height="30">
+                        <Image Source="D:\Project_Foxconn\ControllApp\Adaconda\Adaconda\Resource\Icon\start.png" Width="20" Height="20"/>
+                    </Button>
+                    <Button Name="btn_reset" Cursor="Hand" Margin="5,5" VerticalAlignment="Center">
+                        <Image Source="D:\Project_Foxconn\Calibration_wallmount1\wallmount1\WallMount1\WallMount1\ImageItem\btn_reset.jpg" Width="20" Height="20"/>
+                    </Button>
+                </ToolBar>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

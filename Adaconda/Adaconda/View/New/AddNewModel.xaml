@@ -1,0 +1,18 @@
+﻿<Window x:Class="Adaconda.View.New.AddNewModel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Adaconda.View.New"
+        mc:Ignorable="d"
+        Icon="\Resource\Icon\add_icon.png"
+        Title="AddNewModel" Height="100" Width="450" MinHeight="100" MaxHeight="100" MinWidth="450" MaxWidth="450">
+        
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment= "Center">
+            <Label Content="Model name:"/>
+            <TextBox Name="tbxNewModelName" Height="30" Width="250"/>
+            <Button Name="addNewModel" Content="Add" Height="30" Width="80" Margin="10,0,0,0" Click="addNewModel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
